@@ -534,7 +534,7 @@ let ac,mt;$('#mu').onclick=()=>{if(mt){clearInterval(mt);mt=null;$('#mu').textCo
 if(ld('gate',0))$('#gate').style.display='none';
 function enter(){const u=$('#gu').value.trim().toLowerCase(),p=$('#gp').value,s=STU.find(x=>x[1]===u&&x[2]===p);if(s||(u==='9v'&&p==='star')){sv('gate',1);me=s?s[0]:'Админ';sv('me',me);auth();$('#gate').style.display='none'}else $('#ge').textContent='Қате логин немесе пароль ❌'}
 $('#gb').onclick=enter;$('#gp').onkeydown=e=>{if(e.key==='Enter')enter()};
-const FB='';
+const FB='https://vsynyp-45e52-default-rtdb.europe-west1.firebasedatabase.app';
 async function pull(){if(!FB)return;try{const d=await(await fetch(FB+'/pr.json')).json();if(d){Object.assign(PR,d);sv('pr',PR);rpf();rb()}}catch(e){}}
 async function push(l){if(!FB)return;try{await fetch(FB+'/pr/'+l+'.json',{method:'PUT',body:JSON.stringify(PR[l])})}catch(e){}}
 const bdT=d=>d?new Date(d).toLocaleDateString('kk-KZ',{day:'numeric',month:'long'}):'—';
